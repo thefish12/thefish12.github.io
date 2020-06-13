@@ -46,3 +46,9 @@
     font-weight: bold;
     color: #000;
   }
+  .left {
+    width: 100px;
+    padding: 20px;
+    background-color: turquoise;
+    color:white;
+  }
