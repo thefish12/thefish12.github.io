@@ -88,7 +88,7 @@ body {
 .main {   
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
-  background-color: rgb(206, 250, 200);
+  background-color: aquamarine;
   padding: 20px;
 }
 .zhushi {   
