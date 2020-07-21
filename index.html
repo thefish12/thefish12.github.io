@@ -7,6 +7,7 @@
     flex-direction: column;
     height: 100vh;
   }
+
   .contri {
     float: right;
     display: block;
@@ -20,7 +21,7 @@
     background-color: #333;
   }
 
-  
+
   .side a {
     display: block;
     color: white;
@@ -29,39 +30,57 @@
     text-decoration: none;
     clear: both
   }
-  .nb b{
-    color:cornflowerblue
+
+  .nb b {
+    color: cornflowerblue
   }
 </style>
 <script>
-  function setCookie(cname,cvalue,exdays){
+  function setCookie(cname, cvalue, exdays) {
     var d = new Date();
-    d.setTime(d.getTime()+(exdays*24*60*60*1000));
-    var expires = "expires="+d.toGMTString();
-    document.cookie = cname+"="+cvalue+"; "+expires;
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
   }
-  function getCookie(cname){
+  function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
+    for (var i = 0; i < ca.length; i++) {
       var c = ca[i].trim();
-      if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
+      if (c.indexOf(name) == 0) { return c.substring(name.length, c.length); }
     }
     return "";
   }
-  function checkCookie(){
-    var user=getCookie("username");
-    if (user!=""){
+  function checkCookie() {
+    var user = getCookie("username");
+    if (user != "") {
       alert("欢迎 " + user + " 再次访问");
     }
     else {
-      user = prompt("请输入你的名字:","");
-        if (user!="" && user!=null){
-          setCookie("username",user,30);
-        }
+      user = prompt("请输入你的名字:", "");
+      if (user != "" && user != null) {
+        setCookie("username", user, 30);
+      }
     }
   }
-  </script>
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();// 在小于10的数字前加一个‘0’
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+    t = setTimeout(function () { startTime() }, 500);
+  }
+  function checkTime(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+</script>
+
 <head>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link rel="shortcut icon" href="test.ico">
@@ -69,25 +88,7 @@
   <meta charset="utf-8">
   <title>fish!</title>
   <!--js here-->
-  <script>
-function startTime(){
-	var today=new Date();
-	var h=today.getHours();
-	var m=today.getMinutes();
-	var s=today.getSeconds();// 在小于10的数字前加一个‘0’
-	m=checkTime(m);
-	s=checkTime(s);
-	document.getElementById('txt').innerHTML=h+":"+m+":"+s;
-	t=setTimeout(function(){startTime()},500);
-}
-function checkTime(i){
-	if (i<10){
-		i="0" + i;
-	}
-	return i;
-}
-  </script>
-  <body onload="checkCookie()"></body>
+
 </head>
 <div class="header">
   <h1>鱼の站（欢迎竞标）</h1>
@@ -113,17 +114,21 @@ function checkTime(i){
     <h1>置顶区</h1>
     <h2>这个网站是干嘛的？</h2><br>
     <h2><b>答曰：背语文的（其实你纯听歌也可以）</b></h2>
-    <body onload="startTime()">
-	
+
+    <body onload="startTime()" onload="checkCookie()">
+
       现在时间：<div id="txt"></div>
-        
-      </body>
-    <br><p>本网站所有注释来源于<a>百度百科</a>，不是<a>语文书</a>,可以适当进行调整</p>
+
+    </body>
+    <br>
+    <p>本网站所有注释来源于<a>百度百科</a>，不是<a>语文书</a>,可以适当进行调整</p>
 
 
     <b>歌单出bug了，bug好了再加回来</b>
     <br>
-    <a href="\lab\index.html"><font color=aquamarine>lab</font></a>
+    <a href="\lab\index.html">
+      <font color=aquamarine>lab</font>
+    </a>
     <div class="contri">
       网站贡献者：
       <b class="nb">椿酱</b><br>
