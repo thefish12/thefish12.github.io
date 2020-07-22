@@ -36,59 +36,88 @@
     color: cornflowerblue
   }
 </style>
-<head> 
-  <script src="\js\js.js"></script>
+
+<head>
+  <script>
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) { return c.substring(name.length, c.length); }
+      }
+      return "";
+    }
+    function checkCookie() {
+      var user = getCookie("username");
+      if (user != "") {
+        document.getElementById('txt').innerHTML = "欢迎 " + user + " 再次访问";
+      }
+      else {
+        user = prompt("请输入你的名字:", "");
+        if (user != "" && user != null) {
+          setCookie("username", user, 30);
+        }
+      }
+    }</script>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link rel="shortcut icon" href="test.ico">
   <link rel="stylesheet" type="text/css" href="https://thefish12.github.io/css/css.css">
   <title>fish!</title>
   <!--js here-->
 </head>
+
 <body onload="checkCookie()">
-<div class="header">
-  <h1>鱼の站（欢迎竞标）</h1>
-</div>
-
-<div class="row">
-  <div class="side">
-    <font color=blue>==以下是初二上==</font><br>
-    <a href="https://thefish12.github.io/text/sx/">三峡</a><br>
-    <a href="https://thefish12.github.io/text/dxzss/">答谢中书书</a><br>
-    <a href="https://thefish12.github.io/text/jctsyy/">记承天寺夜游</a><br>
-    <a href="https://thefish12.github.io/text/hhl/">黄鹤楼</a><br>
-    <a href="https://thefish12.github.io/text/yw/">野望</a><br>
-    <a href="https://thefish12.github.io/text/yzsys/">与朱思元书</a><br>
-    <a href="https://thefish12.github.io/text/szss">使至塞上</a>
-    <a href="https://thefish12.github.io/text/djmsb">渡荆门送别</a>
-    <!-- <a href="https://thefish12.github.io/text/xstj/">小石潭记（试验版）</a><br> -->
+  <div class="header">
+    <h1>鱼の站（欢迎竞标）</h1>
   </div>
 
-  <div class="main">
-    <h2>置顶区</h2>
-    <br>
-    <a href="\music\index.html">歌单</a>
-    <p>本网站所有注释来源于<a>百度百科</a>，不是<a>语文书</a>,可以适当进行调整</p>
-    <b>歌单出bug了，bug好了再加回来</b>
-    <br>
-    <a href="\lab\index.html">
-      <font color=aquamarine>lab</font>
-    </a>
-    <div class="contri">
-      网站贡献者：
-      <b class="nb">椿酱</b><br>
-      <img src="orz.gif" alt=" "><br>
+  <div class="row">
+    <div class="side">
+      <font color=blue>==以下是初二上==</font><br>
+      <a href="https://thefish12.github.io/text/sx/">三峡</a><br>
+      <a href="https://thefish12.github.io/text/dxzss/">答谢中书书</a><br>
+      <a href="https://thefish12.github.io/text/jctsyy/">记承天寺夜游</a><br>
+      <a href="https://thefish12.github.io/text/hhl/">黄鹤楼</a><br>
+      <a href="https://thefish12.github.io/text/yw/">野望</a><br>
+      <a href="https://thefish12.github.io/text/yzsys/">与朱思元书</a><br>
+      <a href="https://thefish12.github.io/text/szss">使至塞上</a>
+      <a href="https://thefish12.github.io/text/djmsb">渡荆门送别</a>
+      <!-- <a href="https://thefish12.github.io/text/xstj/">小石潭记（试验版）</a><br> -->
     </div>
+
+    <div class="main">
+      <h2>置顶区</h2>
+      <br>
+      <a href="\music\index.html">歌单</a>
+      <p>本网站所有注释来源于<a>百度百科</a>，不是<a>语文书</a>,可以适当进行调整</p>
+      <b>歌单出bug了，bug好了再加回来</b>
+      <br>
+      <a href="\lab\index.html">
+        <font color=aquamarine>lab</font>
+      </a>
+      <div class="contri">
+        网站贡献者：
+        <b class="nb">椿酱</b><br>
+        <img src="orz.gif" alt=" "><br>
+      </div>
+    </div>
+
+
+
   </div>
 
-
-
-</div>
-
-<div class="footer">
-  <div align='center'><img src='http://www.hit-counts.com/counter.php?t=MTQ0OTM3OA==' border='0'
-      alt='logo designers'>惨淡的访问量……</div>
-  <a href="https://github.com/thefish12/thefish12.github.io">帮个忙开发一下吧QAQ 有写教程的QAQ</a>
-  <br><a>如果有建议请发送到邮箱aa1343664580@163.com QAQ</a>
-</div>
+  <div class="footer">
+    <div align='center'><img src='http://www.hit-counts.com/counter.php?t=MTQ0OTM3OA==' border='0' <a
+        href="https://github.com/thefish12/thefish12.github.io">帮个忙开发一下吧QAQ 有写教程的QAQ</a>
+      <br><a>如果有建议请发送到邮箱aa1343664580@163.com QAQ</a>
+    </div>
 </body>
+
 </html>
