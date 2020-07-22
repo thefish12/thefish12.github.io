@@ -16,7 +16,7 @@ function getCookie(cname) {
 function checkCookie() {
     var user = getCookie("username");
     if (user != "") {
-        alert("欢迎 " + user + " 再次访问");
+      document.getElementById('txt').innerHTML = "欢迎 " + user + " 再次访问";
     }
     else {
         user = prompt("请输入你的名字:", "");
