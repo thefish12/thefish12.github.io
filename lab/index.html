@@ -1,38 +1,94 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
-    <head>
-        <title>lab</title>
-    </head>
-    <body>
-        <font color="red">l</font><font color="green">a</font><font color="purple">b</font>
-        <p>这里可能会一团糟，毕竟是测试</p>
-        <br>
-        test1_表单
-        <br>
-        <p>请输入 1 到 10 之间的数字：</p>
+<!-- 这里是css-->
+<style>
+  html {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
 
-<input id="numb">
+  .contri {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    -ms-flex: 30%;
+    flex: 20%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #333;
+  }
 
-<button type="button" onclick="myFunction()">提交</button>
 
-<p id="demo1"></p>
+  .side a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 20px;
+    text-decoration: none;
+    clear: both
+  }
 
-<script>
-function myFunction() {
-    var x, text;
+  .nb b {
+    color: cornflowerblue
+  }
+</style>
+<head> 
+  <script src="\js\js.js"></script>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link rel="shortcut icon" href="test.ico">
+  <link rel="stylesheet" type="text/css" href="https://thefish12.github.io/css/css.css">
+  <title>fish!</title>
+  <!--js here-->
+</head>
+<body onload="checkCookie()">
+<div class="header">
+  <h1>恭喜你发现了测试网站</h1>
+</div>
 
-    // 获取 id="numb" 的值
-    x = document.getElementById("numb").value;
+<div class="row">
+  <div class="side">
+    <font color=blue>==以下是初二上==</font><br>
+    <a href="https://thefish12.github.io/text/sx/">三峡</a><br>
+    <a href="https://thefish12.github.io/text/dxzss/">答谢中书书</a><br>
+    <a href="https://thefish12.github.io/text/jctsyy/">记承天寺夜游</a><br>
+    <a href="https://thefish12.github.io/text/hhl/">黄鹤楼</a><br>
+    <a href="https://thefish12.github.io/text/yw/">野望</a><br>
+    <a href="https://thefish12.github.io/text/yzsys/">与朱思元书</a><br>
+    <a href="https://thefish12.github.io/text/szss">使至塞上</a>
+    <a href="https://thefish12.github.io/text/djmsb">渡荆门送别</a>
+    <!-- <a href="https://thefish12.github.io/text/xstj/">小石潭记（试验版）</a><br> -->
+  </div>
 
-    // 如果输入的值 x 不是数字或者小于 1 或者大于 10，则提示错误 Not a Number or less than one or greater than 10
-    if (isNaN(x) || x < 1 || x > 10) {
-        text = "输入错误";
-    } else {
-        text = "输入正确";
-    }
-    document.getElementById("demo1").innerHTML = text;
-}
-</script>
-    </body>
+  <div class="main">
+    <h2>置顶区</h2>
+    <br>
+    <a href="\music\index.html">歌单</a>
+    <p>本网站所有注释来源于<a>百度百科</a>，不是<a>语文书</a>,可以适当进行调整</p>
+    <b>歌单出bug了，bug好了再加回来</b>
+    <br>
+    <a href="\lab\index.html">
+      <font color=aquamarine>lab</font>
+    </a>
+    <div class="contri">
+      网站贡献者：
+      <b class="nb">椿酱</b><br>
+      <img src="orz.gif" alt=" "><br>
+    </div>
+  </div>
+
+
+
+</div>
+
+<div class="footer">
+  <div align='center'><img src='http://www.hit-counts.com/counter.php?t=MTQ0OTM3OA==' border='0'
+      alt='logo designers'>惨淡的访问量……</div>
+  <a href="https://github.com/thefish12/thefish12.github.io">帮个忙开发一下吧QAQ 有写教程的QAQ</a>
+  <br><a>如果有建议请发送到邮箱aa1343664580@163.com QAQ</a>
+</div>
+</body>
 </html>
